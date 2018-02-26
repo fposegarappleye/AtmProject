@@ -1,20 +1,14 @@
 import java.util.ArrayList;
 
 public class User {
-	// CHECK NOTEBOOK!
+	private Account[] accounts;
 	private String id;
 	private String name;
 	private String pin;
-	private Account[] accounts;
-	//static ArrayList<User> users = new ArrayList<User>();
-	/**Account[] a = new Account
-			{
-				new Account();
-			}
-			**/
+	static ArrayList<User> users = new ArrayList<User>();
 
-	// Creates a new user
 
+	// CONSTRUCTOR
 	public User(String name, String id, String pin, Account[] accounts)
 	{
 		this.name = name;
@@ -23,25 +17,30 @@ public class User {
 		this.accounts = accounts;
 	}
 
+	// COMPLETE
 	public Account[] getAccounts()
 	{
 		return accounts;
 	}
 
-	public String getName()
+	// COMPLETE
+	String getName()
 	{
 		return name;
 	}
 
-	public User getUser(String id, String pin)
+	// COMPLETE
+	public static User getUser(String id, String pin)
 	{
-		if(id == id && pin == pin) //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<<<<<<
+		int userIndex = 0;
+		for(int i = 0; i < users.size() ; i++)
 		{
-			return User;
+			User input = users.get(i);
+			if(input.id.equals(id) && input.pin.equals(pin))
+			{
+				return users.get(i);
+			}
 		}
-		else
-		{
-			return null;
-		}
+		return null;
 	}
 }
